@@ -6,15 +6,15 @@
 #include "constraints.h"
 #include "particle.h"
 
-class Collider
+class Collider //Classe parent pour les colliders.
 {
 public:
-    Collider()=default;
+    Collider() = default;
     virtual ~Collider() = default;
 
-    virtual std::optional<StaticConstraint> checkContact(const Particle& p)=0;
-    virtual void draw(QPainter& painter)=0;//Ajout pour le dessin
-    //virtual void setPc(const Vec2 newPc);
+    virtual std::optional<StaticConstraint> checkContact(const Particle& p) = 0; //Méthode pour déterminer le contact entre une particule et un collider
+    virtual void draw(QPainter& painter) = 0;   //Méthode pour l'affichage des colliders
+    virtual void setPc(const Vec2 newPc) = 0;
 };
 
 class PlanCollider : public Collider
@@ -26,17 +26,13 @@ class PlanCollider : public Collider
 
     std::optional<StaticConstraint> checkContact(const Particle& p) override;
 
-    void draw(QPainter& painter) override;
+    void draw(QPainter& painter) override ;
 
-    void setPc(const Vec2 newPc){pc = newPc;}
-    void setNc(const Vec2 newNc){nc = newNc;}
-    Vec2 getPc() const {return pc;}
-
+    void setPc(const Vec2 newPc) override {pc = newPc;}
 
 private:
     Vec2 pc;
     Vec2 nc;
-
 };
 
 class SphereCollider : public Collider
@@ -48,7 +44,9 @@ public:
 
     std::optional<StaticConstraint> checkContact(const Particle& p) override;
 
-    void draw(QPainter& painter) override;
+    void  draw(QPainter& painter) override;
+    void setPc(const Vec2 newPc) override {center = newPc;}
+
 private:
     Vec2 center;
     float radius;

@@ -45,12 +45,12 @@ template <> constexpr inline auto DrawArea::qt_create_metaobjectdata<qt_meta_tag
         "paintEvent",
         "QPaintEvent*",
         "event",
+        "paint",
+        "clicked",
         "mouseDoubleClickEvent",
         "QMouseEvent*",
         "animate",
-        "resetSimulation",
-        "paint",
-        "clicked"
+        "resetSimulation"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -62,18 +62,18 @@ template <> constexpr inline auto DrawArea::qt_create_metaobjectdata<qt_meta_tag
         QtMocHelpers::SlotData<void(QPaintEvent *)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 5, 6 },
         }}),
+        // Slot 'paint'
+        QtMocHelpers::SlotData<void(bool)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 8 },
+        }}),
         // Slot 'mouseDoubleClickEvent'
-        QtMocHelpers::SlotData<void(QMouseEvent *)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 8, 6 },
+        QtMocHelpers::SlotData<void(QMouseEvent *)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 10, 6 },
         }}),
         // Slot 'animate'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'resetSimulation'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'paint'
-        QtMocHelpers::SlotData<void(bool)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 12 },
-        }}),
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -99,10 +99,10 @@ void DrawArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         switch (_id) {
         case 0: _t->particleCountChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->paintEvent((*reinterpret_cast<std::add_pointer_t<QPaintEvent*>>(_a[1]))); break;
-        case 2: _t->mouseDoubleClickEvent((*reinterpret_cast<std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
-        case 3: _t->animate(); break;
-        case 4: _t->resetSimulation(); break;
-        case 5: _t->paint((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 2: _t->paint((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 3: _t->mouseDoubleClickEvent((*reinterpret_cast<std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
+        case 4: _t->animate(); break;
+        case 5: _t->resetSimulation(); break;
         default: ;
         }
     }

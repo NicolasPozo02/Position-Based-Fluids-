@@ -2,20 +2,12 @@
 #define CONSTRAINTS_H
 #include "vec2.h"
 
-struct StaticConstraint
+struct StaticConstraint // Structure pour la définition des contraintes avec les colliders.
 {
-    int particle_index;
+    int particle_index; //Indice de la particule impliquée dans le contact.
     Vec2 pc;
     Vec2 nc;
     float C;
-};
-
-struct ParticleConstraint
-{
-    int particle_i;
-    int particle_j;
-    Vec2 ni;            // Normale de collision
-    float C;            // Pénétration
 };
 
 #endif // CONSTRAINTS_H

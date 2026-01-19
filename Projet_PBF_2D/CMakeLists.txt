@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Projet_PBF_2D VERSION 0.1 LANGUAGES CXX)
 
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -69,4 +70,14 @@ install(TARGETS Projet_PBF_2D
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Projet_PBF_2D)
+
+    # 1. On cherche le module Concurrent en plus des autres
+    find_package(Qt6 REQUIRED COMPONENTS Widgets Concurrent)
+
+    # 2. Après ton add_executable, on lie le module à ton application
+    target_link_libraries(Projet_PBF_2D PRIVATE
+        Qt6::Widgets
+        Qt6::Concurrent
+    )
+
 endif()

@@ -15,7 +15,7 @@ class DrawArea;
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT                                // macro autorisant slot et signals
+    Q_OBJECT
 
 public:
 
@@ -24,15 +24,22 @@ public:
 
 public slots:
 
-    void start(bool clicked);
-    void stop(bool clicked);
-    void restart(bool clicked);
+    void start(bool clicked);       // Lancement de la simulaiton
+    void stop(bool clicked);        // Pause de la simulation
+    void restart(bool clicked);     // Lancement d'une nouvelle simulation
 
 private slots:
 
+    // METHODES POUR MODIFIER LES VALEURS DISPOSANT D'UN QSLIDER
+
     void gravitySlider_valueChanged(int value);
-    void stiffnessSlider_valueChanged(int value);
-    void coeffSumRSlider_valueChanged(int value);
+    void amplitudeSlider_valueChanged(int value);
+    void coeffVortiSlider_valueChanged(int value);
+    void coeffViscoSlider_valueChanged(int value);
+    void k_scorrSlider_valueChanged(int value);
+
+    // MISE A JOUR DU COMPTEUR DE PARTICULES
+
     void updateParticleCountLabel();
 
 private:

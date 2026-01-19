@@ -4,7 +4,7 @@
 #include<vector>
 #include "vec2.h"
 
-enum class CollisionState {None, Static, Particle};
+enum class CollisionState {None, Static};
 
 class Particle
 {

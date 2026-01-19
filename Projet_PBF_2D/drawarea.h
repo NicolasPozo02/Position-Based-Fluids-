@@ -20,15 +20,15 @@ public:
 
 signals:
 
-void particleCountChanged(int newCount);
+void particleCountChanged(int newCount);                        // Signal pour l'ajout d'une particule après un double clic sur l'écran
 
 public slots:
 
-    void paintEvent(QPaintEvent *event) override;
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
-    void animate();
-    void resetSimulation();
-    void paint(bool clicked);
+    void paintEvent(QPaintEvent *event) override;               // Affichage des particules et des colliders
+    void paint(bool clicked);                                   // Affichage des particules après avoir cliquer sur le bouton generate
+    void mouseDoubleClickEvent(QMouseEvent *event) override;    // Ajout d'une particule par un double clic dans la zone d'affichage
+    void animate();                                             // Animation de la simulation
+    void resetSimulation();                                     // Restart de la simulation
 
 };
 

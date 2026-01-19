@@ -46,8 +46,10 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "restart",
         "gravitySlider_valueChanged",
         "value",
-        "stiffnessSlider_valueChanged",
-        "coeffSumRSlider_valueChanged",
+        "amplitudeSlider_valueChanged",
+        "coeffVortiSlider_valueChanged",
+        "coeffViscoSlider_valueChanged",
+        "k_scorrSlider_valueChanged",
         "updateParticleCountLabel"
     };
 
@@ -68,16 +70,24 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 7 },
         }}),
-        // Slot 'stiffnessSlider_valueChanged'
+        // Slot 'amplitudeSlider_valueChanged'
         QtMocHelpers::SlotData<void(int)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 7 },
         }}),
-        // Slot 'coeffSumRSlider_valueChanged'
+        // Slot 'coeffVortiSlider_valueChanged'
         QtMocHelpers::SlotData<void(int)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 7 },
         }}),
+        // Slot 'coeffViscoSlider_valueChanged'
+        QtMocHelpers::SlotData<void(int)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 7 },
+        }}),
+        // Slot 'k_scorrSlider_valueChanged'
+        QtMocHelpers::SlotData<void(int)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 7 },
+        }}),
         // Slot 'updateParticleCountLabel'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -105,9 +115,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->stop((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         case 2: _t->restart((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         case 3: _t->gravitySlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 4: _t->stiffnessSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 5: _t->coeffSumRSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 6: _t->updateParticleCountLabel(); break;
+        case 4: _t->amplitudeSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->coeffVortiSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->coeffViscoSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 7: _t->k_scorrSlider_valueChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->updateParticleCountLabel(); break;
         default: ;
         }
     }
@@ -132,14 +144,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 9;
     }
     return _id;
 }

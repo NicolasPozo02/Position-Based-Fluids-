@@ -84,15 +84,4 @@ inline float norm(const Vec2& v)
     return std::sqrt(squaredLength(v));
 }
 
-inline bool operator==(const Vec2& v1, const Vec2& v2)
-{
-    if (v1[0]==v2[0] and v1[1]==v2[1])
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 #endif // Vec2_H

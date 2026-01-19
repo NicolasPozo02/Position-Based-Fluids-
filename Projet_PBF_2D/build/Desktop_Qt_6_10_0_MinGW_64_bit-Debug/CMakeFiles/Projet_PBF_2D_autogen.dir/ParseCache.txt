@@ -791,5 +791,3 @@ C:/Users/nicol/Documents/Mines Nancy/4A/S9/Introduction_C++/Projet/Projet_PBF_2D
 C:/Users/nicol/Documents/Mines Nancy/4A/S9/Introduction_C++/Projet/Projet_PBF_2D/mainwindow.cpp
  uic:./ui_mainwindow.h
 C:/Users/nicol/Documents/Mines Nancy/4A/S9/Introduction_C++/Projet/Projet_PBF_2D/particle.cpp
-C:/Users/nicol/Documents/Mines Nancy/4A/S9/Introduction_C++/Projet/Projet_PBF_2D/staticconstraint.cpp
-C:/Users/nicol/Documents/Mines Nancy/4A/S9/Introduction_C++/Projet/Projet_PBF_2D/vec2.cpp

@@ -11,9 +11,10 @@ std::optional<StaticConstraint> PlanCollider::checkContact(const Particle& p)
     return std::nullopt;
 }
 
+
 std::optional<StaticConstraint> SphereCollider::checkContact(const Particle& p)
 {
-    Vec2 diff = p.getPos() - center;
+    Vec2 diff = p.getExpectedPos() - center;
     float d = norm(diff);
 
     float C = d-(this->radius+p.getRadius());
@@ -29,11 +30,23 @@ std::optional<StaticConstraint> SphereCollider::checkContact(const Particle& p)
 
 void PlanCollider::draw(QPainter& painter)
 {
-    float scal = dot(nc,pc);
-    painter.drawLine(static_cast<int>(pc[0]),static_cast<int>(pc[1]),0,static_cast<int>(scal/nc[1]));
+    // 1. Définir le vecteur direction (perpendiculaire à la normale)
+
+    Vec2 direction(-nc[1], nc[0]);
+
+    // 2. Créer deux points très éloignés pour simuler une ligne "infinie"
+
+    float length = 2000.0f; // Assez grand pour couvrir tout l'écran
+    Vec2 p1 = pc + direction * length;
+    Vec2 p2 = pc - direction * length;
+
+
+    // 4. Dessiner la ligne
+    painter.drawLine(p1[0], p1[1], p2[0], p2[1]);
 }
 
-void SphereCollider::draw(QPainter& painter)
+
+void  SphereCollider::draw(QPainter& painter)
 {
     painter.drawEllipse(center[0]-radius,center[1]-radius, radius*2, radius *2);
 }

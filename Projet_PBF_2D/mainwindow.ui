@@ -42,7 +42,7 @@
        </size>
       </property>
       <property name="title">
-       <string>GroupBox</string>
+       <string>POSITION BASED FLUIDS</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="sizeConstraint">
@@ -54,113 +54,217 @@
           <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
          </property>
          <item>
-          <widget class="QPushButton" name="start_button">
-           <property name="enabled">
-            <bool>true</bool>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="leftMargin">
+            <number>5</number>
            </property>
-           <property name="text">
-            <string>Start</string>
+           <property name="rightMargin">
+            <number>5</number>
            </property>
-           <property name="iconSize">
-            <size>
-             <width>12</width>
-             <height>12</height>
-            </size>
-           </property>
-          </widget>
+           <item>
+            <widget class="QPushButton" name="start_button">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>12</width>
+               <height>12</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="stop_button">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="restart_button">
+             <property name="text">
+              <string>Restart</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="stop_button">
-           <property name="text">
-            <string>Stop</string>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="leftMargin">
+            <number>5</number>
            </property>
-          </widget>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="count_label">
+             <property name="text">
+              <string>Nombre de particules : 0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QPushButton" name="btn_generate">
+               <property name="text">
+                <string>Generate</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="sb_particleCount">
+               <property name="maximum">
+                <number>100000</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="restart_button">
-           <property name="text">
-            <string>Restart</string>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="leftMargin">
+            <number>5</number>
            </property>
-          </widget>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="amplitude_label">
+               <property name="text">
+                <string>Amplitude</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="amplitude_slider">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximum">
+                <number>1000</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QLabel" name="gravity_label">
+                 <property name="text">
+                  <string>Gravité</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSlider" name="gravity_slider">
+                 <property name="maximum">
+                  <number>1000</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLabel" name="count_label">
-           <property name="text">
-            <string>Nombre de particules : 0</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_9"/>
          </item>
          <item>
-          <widget class="QPushButton" name="btn_generate">
-           <property name="text">
-            <string>Generate</string>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="leftMargin">
+            <number>5</number>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="sb_particleCount">
-           <property name="maximum">
-            <number>100000</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,1,1,1,1">
-         <property name="spacing">
-          <number>10</number>
-         </property>
-         <item>
-          <widget class="QSlider" name="gravity_slider">
-           <property name="maximum">
-            <number>1000</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="gravity_label">
-           <property name="text">
-            <string>Gravity</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="stiffness_slider">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="stiffness_label">
-           <property name="text">
-            <string>Raideur : 0</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="coeffSumR_slider">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Orientation::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="coeffSumR_label">
-           <property name="text">
-            <string>Coefficient multiplicateur : 0</string>
-           </property>
-          </widget>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="leftMargin">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="coeffVorti_label">
+               <property name="text">
+                <string>Vorticité</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="coeffVorti_slider">
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QLabel" name="coeff_Visco_label">
+               <property name="text">
+                <string>Viscosité</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="coeffVisco_slider">
+               <property name="maximum">
+                <number>1000</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLabel" name="k_scorr_label">
+               <property name="text">
+                <string>k_scorr</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSlider" name="k_scorr_slider">
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
